@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import unittest
 from django.test import LiveServerTestCase
+
 
 class NewVisitorTest(LiveServerTestCase):
 
@@ -55,7 +55,5 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertRegex(francis_list_url, '/lists/.+')
         self.assertNotEqual(francis_list_url, edith_list_url)
 
-        page_text = self.browser.find_elements_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertIn('Buy milk', page_text)
-
-        self.fail('Finish the test')
