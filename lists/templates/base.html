@@ -15,6 +15,11 @@
                         <input id="id_new_item" name="item_text" placeholder="Enter a to-do item"
                             class="form-control input-lg"
                         />
+                        {% if error %}
+                            <div class="form-group has-error">
+                                <span class="help-block">{{ error }}</span>
+                            </div>
+                        {% endif %}
                     </form>
                 </div>
             </div>
